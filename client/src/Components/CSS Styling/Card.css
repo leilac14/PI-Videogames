@@ -1,0 +1,11 @@
+.Card img {
+    width:100% ;
+    min-width: 200px;
+    min-height: 50px;
+    text-align: center;
+    max-width: fit-content;
+    height: fit-content;
+    max-height: 145px;
+    border: rgb(214, 214, 214) solid 2px;
+    border-radius: 30px;
+  }
