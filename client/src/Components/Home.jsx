@@ -11,6 +11,7 @@ import { filterByGenres, filterByCreated } from '../Redux/Actions/index';
 import { orderByName, orderByRating } from '../Redux/Actions/index';
 import { Link } from "react-router-dom";
 import loading from '../Assets/loading-img.gif';
+import SearchBar from "./SearchBar";
 
 export default function Home() {
 
@@ -90,6 +91,7 @@ export default function Home() {
                 <div>
                     <SortBy handlerByName={handlerByName} handlerByRating={handlerByRating} namechange={namechange} ratingchange={ratingchange}/>
                     {/* <Filters handlerGenres={handlerGenres} handlerCreated={handlerCreated} source={source} genrechange={genrechange}/> */}
+                    <SearchBar />
                     <button onClick={e => {handleClick(e)}} >
                         RESET
                     </button>
