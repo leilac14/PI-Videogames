@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import loading from '../Assets/loading-img.gif'
+import { getVideogames } from "../Redux/Actions";
 
 
 export default function Details() {
@@ -28,9 +29,13 @@ export default function Details() {
                         <img src={videogame.background_image} alt="Image not Found" />
                         {videogame.description ? <h3> Description: <br/> {videogame.description.replaceAll("<p>","").replaceAll("</p>","").replaceAll("<br />","").replaceAll("<br/>","").replaceAll("<strong>","").replaceAll("</strong>","").replaceAll("<ul>","").replaceAll("</ul>","").replaceAll("<li>","").replaceAll("</li>","").replaceAll("[object Object]","").replaceAll("<h3>", "").replaceAll("&#39;", "")} </h3> : null}
                         <div>
-                            <h3> Genres: {videogame.genres.join(", ")} </h3>
+                            <h3> Genres: {videogame.genres[0].name ? videogame.genres?.map(v => {
+                                return <h3>{v.name}</h3>
+                            }) : videogame.genres.join(", ")} </h3>
                             <h3> Release date: {videogame.released} </h3>
-                            {/* <h3> Platforms: {videogame.id.length === 36 ? videogame.platforms :  videogame.platforms.map(p => p.platform.name).join(", ")} </h3> */}
+                            <h3> Platforms: {videogame.platforms[0].name ? videogame.platforms?.map(v => {
+                                return <h3>{v.name}</h3>
+                            }) : videogame.platforms.join(", ")} </h3>
                             <h3> Rating: {videogame.rating} / 5</h3>
                         </div>
                         <div> 

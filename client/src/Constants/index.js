@@ -1,3 +1,5 @@
+export const A_Z = "A-Z";
+export const Z_A = "Z-A";
 export const base = "base";
 export const library = "library";
 export const userMade = "userMade";

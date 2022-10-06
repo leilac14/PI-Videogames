@@ -29,7 +29,7 @@ export default function SearchBar () {
                 onChange={(e) => handlerChange(e)}
                 />
 
-                <button type="submit">Search</button>
+                <button type="submit" disabled= {name === ""}>Search</button>
             </form>
             
         </div>

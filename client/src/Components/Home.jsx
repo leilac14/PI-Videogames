@@ -29,6 +29,8 @@ export default function Home() {
     const [genrechange, setGenrechange] = useState('');
     const [, setOrder] = useState()
 
+    let id = 0
+
     const pagination = (pageNumber) => {
         setCurrentPage(pageNumber);
     }
@@ -83,7 +85,7 @@ export default function Home() {
         setOrder("Order" + e.target.value); 
     }
 
-
+console.log(allVideogames)
     return (
         <div>
             <NavBar/>
@@ -93,7 +95,7 @@ export default function Home() {
                     {/* <Filters handlerGenres={handlerGenres} handlerCreated={handlerCreated} source={source} genrechange={genrechange}/> */}
                     <SearchBar />
                     <button onClick={e => {handleClick(e)}} >
-                        RESET
+                        Reset
                     </button>
                 </div>
 
@@ -107,15 +109,19 @@ export default function Home() {
                             <button>EXIT</button>
                         </Link>
 
-                        {currentVideogames.length > 0 ?
+                        {currentVideogames?.length > 0 ?
                         <div>
-                            {currentVideogames.map( el => {
+                            {currentVideogames?.map( el => {
+                                id++
                                 return (
-                                    <div key={el.id}>
+                                    <div key={id}>
                                         <Card name={el.name} genres={el.genres} background_image={el.background_image} rating={el.rating} id={el.id} createdInDb={el.createdInDb}/>
                                     </div>
                                 );
                             })}
+                        
+                        <Pagination videogamesPerPage={videogamesPerPage} allVideogames={allVideogames.length} pagination={pagination} currentPage={currentPage}/>
+                        
                         </div> 
                         : 
                         <div>

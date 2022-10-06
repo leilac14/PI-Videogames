@@ -22,6 +22,9 @@ export function getVideogamesByName(payload) {
                     payload: response.data
                 })
             })
+            .catch(error => {
+                console.log(error)
+            })
     }
 }
 

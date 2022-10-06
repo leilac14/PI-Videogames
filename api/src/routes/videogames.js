@@ -21,13 +21,13 @@ router.get("/", async (req, res, next) => {
                         [Op.iLike]: "%" + name + "%"
                     }
                 },
-                order: [
-                    ["name", "ASC"]
-                ]
+                // order: [
+                //     ["name", "ASC"]
+                // ]
             })
             let videogameAPI = await axios(`https://api.rawg.io/api/games?search=${name}&key=${API_KEY}`)
             if (videogameDB.length) {
-                videogame = [videogameDB.concat(videogameAPI.data.results)]
+                videogame = videogameDB.concat(videogameAPI.data.results)
             } else {
                 videogame = videogameAPI.data.results
             }
