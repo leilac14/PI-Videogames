@@ -1,0 +1,176 @@
+.mainCreate{
+    height: 100vh;
+    background-image: url('../../Assets/home-background.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.create{
+    background-color: #280783;
+    border: 2px solid #f500ff;
+    border-radius: 5%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 35px;
+    width: fit-content;
+}
+
+
+
+.title{
+    color: rgb(235, 208, 243);
+    font-family: 'VideogameTitleFont';
+    font-size: 35px;
+}
+
+.data {
+    display: flex;
+    text-align: start;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.column1 {
+    padding-right: 20px;
+}
+
+label {
+    color: rgb(235, 208, 243);
+    font-size: 18px;
+}
+
+.input {
+    background-color: #f0def5;
+    border-color: rgb(146, 74, 212);
+    border-radius: 8%;
+
+}
+
+.inputDescription {
+    height: 85px;
+    width: 190px;
+    background-color: #f0def5;
+    border-color: rgb(146, 74, 212);
+    font-size: 15px;
+}
+
+.selectGenres {
+    background-color: #f0def5;
+    border-color: rgb(146, 74, 212);
+    border-radius: 8%;
+    font-size: 15px;
+    font-family: monospace;
+    width: 190px;
+}
+
+.column2 {
+    padding-right: 20px;
+}
+
+.mainMultiSelect {
+    display: flex;
+    margin-top: 10px;
+}
+
+.multiSelect {
+    color: #f0def5;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.btnMultiSelect {
+    height: 20px;
+    margin-left: 5px;
+    background-color: #f500ff;
+    color: #f0def5;
+    border-color: #f0def5;
+    font-family: monospace;
+}
+
+.btn {
+    color: rgb(240, 235, 245);
+    background-color: #8a00ff;
+    border-color: rgb(240, 235, 245);
+    border-width: 2px;
+    cursor: pointer;
+    padding-left: 5px;
+    margin-left: 2px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-family: 'text';
+    font-size: 22px;
+}
+
+.btn:hover {
+    color: #f0def5;
+    background-color: #f500ff;
+    border-color: rgb(146, 74, 212);
+}
+
+
+@font-face {
+    font-family: 'VideogameTitleFont';
+    src: url('../../Fonts/UPHEAVTT.TTF');
+  }
+
+@font-face {
+    font-family: 'text';
+    src: url('../../Fonts/VCR_OSD_MONO_1.001.TTF')
+}
+
+@media screen and (max-width: 700px) {
+
+    .create {
+        margin-top: 85px;
+        margin-bottom: 20px;
+        width: 80%;
+    }
+    
+    .title {
+        font-size: 22px;
+    }
+    
+    .data {
+        display: block;
+        padding-left: auto;
+        padding-right: 0px;
+    }
+
+    label {
+        font-size: 17px;
+    }
+
+    .input {
+        width: 95%;
+        font-size: 12px;
+    }
+
+    .column1 {
+        margin-bottom: 20px;
+    }
+
+    .column2 {
+        margin-bottom: 20px;
+    }
+
+    .inputDescription {
+        height: 60px;
+        width: 95%;
+        font-size: 12px;
+    }
+
+    #inputRating {
+        width: 88%;
+    }
+
+    .selectGenres {
+        width: 90%;
+    }
+
+    .btn {
+        margin-top: 35px;
+        margin-bottom: 30px;
+        font-size: 20px;
+    }
+
+}

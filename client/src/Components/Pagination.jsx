@@ -12,9 +12,7 @@ export default function Pagination ({videogamesPerPage, allVideogames, paginatio
         <nav className='Pagination'>
                 {pageNumbers && pageNumbers.map(number => (
    
-                        <button key={number} onClick={() => pagination(number)} style={currentPage === number ? {backgroundColor: "#280783", color: "white", borderColor:"white" , fontSize: "20px"} : undefined}>{number}</button>
-
-                   
+                    <button key={number} onClick={() => pagination(number)} className='btns' style={currentPage === number ? {backgroundColor: "#6700ff", color: "white", borderColor:"white" , fontSize: "20px"} : undefined}>{number}</button>
                 ))}
         </nav>
     )

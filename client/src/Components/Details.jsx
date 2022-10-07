@@ -4,7 +4,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import loading from '../Assets/loading-img.gif'
+import NavBar from '../Components/NavBar'
 import { getVideogames } from "../Redux/Actions";
+import './CSS Styling/Details.css'
 
 
 export default function Details() {
@@ -21,26 +23,29 @@ export default function Details() {
         }
     }, [id]);
 
-    return <div>
+    return <div className="main">
             {
                 videogame ? 
                 <div>
-                        <h1> {videogame.name} </h1>
-                        <img src={videogame.background_image} alt="Image not Found" />
-                        {videogame.description ? <h3> Description: <br/> {videogame.description.replaceAll("<p>","").replaceAll("</p>","").replaceAll("<br />","").replaceAll("<br/>","").replaceAll("<strong>","").replaceAll("</strong>","").replaceAll("<ul>","").replaceAll("</ul>","").replaceAll("<li>","").replaceAll("</li>","").replaceAll("[object Object]","").replaceAll("<h3>", "").replaceAll("&#39;", "")} </h3> : null}
+                        <NavBar />
+                        <h1 className="name"> {videogame.name} </h1>
+                        <img className="img" src={videogame.background_image} alt="Image not Found" />
+                            <div className="atributos">
+                        {videogame.description ? <h3 className="description"> Description: <br/> {videogame.description.replaceAll("<p>","").replaceAll("</p>","").replaceAll("<br />","").replaceAll("<br/>","").replaceAll("<strong>","").replaceAll("</strong>","").replaceAll("<ul>","").replaceAll("</ul>","").replaceAll("<li>","").replaceAll("</li>","").replaceAll("[object Object]","").replaceAll("<h3>", "").replaceAll("&#39;", "")} </h3> : null}
                         <div>
-                            <h3> Genres: {videogame.genres[0].name ? videogame.genres?.map(v => {
+                            <h3 className="genre"> Genres: {videogame.genres[0].name ? videogame.genres?.map(v => {
                                 return <h3>{v.name}</h3>
                             }) : videogame.genres.join(", ")} </h3>
-                            <h3> Release date: {videogame.released} </h3>
-                            <h3> Platforms: {videogame.platforms[0].name ? videogame.platforms?.map(v => {
+                            <h3 className="platform"> Platforms: {videogame.platforms[0].name ? videogame.platforms?.map(v => {
                                 return <h3>{v.name}</h3>
                             }) : videogame.platforms.join(", ")} </h3>
-                            <h3> Rating: {videogame.rating} / 5</h3>
+                            <h3 className="released"> Release date: {videogame.released} </h3>
+                            <h3 className="rating"> Rating: {videogame.rating} / 5</h3>
+                                </div>
                         </div>
                         <div> 
                             <Link to = "/home">
-                                <button>BACK</button>
+                                <button className="backBtn">BACK</button>
                             </Link>
                         </div>
                 </div>  

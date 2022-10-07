@@ -6,6 +6,9 @@ import { postVideogames, getGenres } from '../Redux/Actions/index';
 import { Action, Puzzle, Indie, Adventure, Arcade, RPG, Strategy, Shooter, Casual, Simulation, Racing, Platformer, Massively_Multiplayer, Sports, Fighting, Board_Games, Card, Educational, Family } from '../Constants/index'
 import { useDispatch, useSelector } from "react-redux";
 import NavBar from '../Components/NavBar';
+import './CSS Styling/CreateGame.css'
+import SearchBar from "./SearchBar";
+import SortBy from "./SortBy";
 
 export default function CreateGame() {
     let dispatch = useDispatch()
@@ -170,80 +173,131 @@ export default function CreateGame() {
      console.log(videogame)
 
      return (
-        <>
+        <div className="mainCreate">
+        <div className="mainNavFiltersContainer">
         <NavBar />
-        <br/>
-         <form action="" onSubmit={onSubmit}>
-             <label htmlFor="">Name: </label>
-             <input placeholder="Enter a name" onChange={onInputChange} name= "name" type="text" value= {videogame.name}/>
-             {error.name && <p style={{ 'color': 'red' }}>{error.name}</p>}
-             <br />
-             <label htmlFor="">Image URL: </label>
-             <input onChange={onInputChange} placeholder="Enter img URL..." name= "background_image" type="text" value= {videogame.background_image}/>
-             <br/>
-             <label htmlFor="">Description: </label>
-             <input placeholder="Enter a description" onChange={onInputChange} name= "description" type="text" value= {videogame.description} maxLength="500" />
-             <br />
-             <label htmlFor="">Release Date: </label>
-             <input placeholder="YYYY/MM/DD" onChange={onInputChange} name= "released" type="date" value= {videogame.released}/>
-             {error.released && <p style={{ 'color': 'red' }}>{error.released}</p>}
-             <br />
-             <label htmlFor="">Rating: </label>          
-             <input placeholder="5 - 0" onChange={onInputChange} name= "rating" type="number" value= {videogame.rating} min="0" max="5" step=".01"/>
-             {error.rating && <p style={{ 'color': 'red' }}>{error.rating}</p>}
-             <br />
-             <label htmlFor="">Platforms: </label>
-             <select onChange={setPlatform}>
-                      <option value="" defaultValue>Platforms</option>
-                      <option value={"PC"} >PC</option>
-                      <option value={"Linux"} >Linux</option>
-                      <option value={"macOS"} >macOS</option>
-                      <option value={"iOS"} >iOS</option>
-                      <option value={"Android"} >Android</option>
-                      <option value={"PlayStation 5"} >PlayStation 5 </option>
-                      <option value={"PlayStation 4"} >PlayStation 4 </option>
-                      <option value={"PlayStation 3"} >PlayStation 3 </option>
-                      <option value={"PlayStation 2"} >PlayStation 2 </option>
-                      <option value={"Xbox Series S/X"} >Xbox Series S/X </option>
-                      <option value={"XBOX One"} >XBOX One </option>
-                      <option value={"XBOX 360"} >XBOX 360 </option>
-                      <option value={"XBOX"} >XBOX </option>
-                      <option value={"Nintendo Switch"} >Nintendo Switch </option>
-                      <option value={"Nintendo WiiU"} >Nintendo WiiU </option>
-                      <option value={"Nintendo Wii"} >Nintendo Wii </option>
-             </select>
-             {error.platforms && <p style={{ 'color': 'red' }}>{error.platforms}</p>}
-             {videogame.platforms && <h3>{videogame.platforms.join(" - ")}</h3>}
-             <br />
-             <div>
-                <label htmlFor="">Genres: </label>
-                   <select onChange={setGenre}>
-                      <option value="" defaultValue>Genres</option>
-                      <option value={4} >Action</option>
-                      <option value={3} >Adventure</option>
-                      <option value={11} >Arcade</option>
-                      <option value={28} >Board Games</option>
-                      <option value={17} >Card</option>
-                      <option value={40} >Casual</option>
-                      <option value={34} >Educational</option>
-                      <option value={19} >Family</option>
-                      <option value={6} >Fighting</option>
-                      <option value={51} >Indie</option>
-                      <option value={59} >Massively Multiplayer</option>
-                      <option value={83} >Platformer</option>
-                      <option value={7} >Puzzle</option>
-                      <option value={5} >RPG</option>
-                      <option value={1} >Racing</option>
-                      <option value={2} >Shooter</option>
-                      <option value={14} >Simulation</option>
-                      <option value={15} >Sports</option>
-                      <option value={10} >Strategy</option>
-                   </select>
-             {error.genres && <p style={{ 'color': 'red' }}>{error.genres}</p>}
-             {videogame.genres && <h3>{videogame.genres.join(" - ")}</h3>}
-             </div>
-             <input type="submit" value= "Create Game" onSubmit={onSubmit}/>
-         </form>
-        </>
+        </div>
+
+         <div className="create">
+            <h1 className="title">Create New Videogame</h1>
+            <form action="" onSubmit={onSubmit}>
+
+               <div className="data">
+
+                  <div className="column1">
+                     <label htmlFor="">Name: </label>
+                     <input placeholder="Enter a name" 
+                              onChange={onInputChange} 
+                              name= "name" 
+                              type="text" 
+                              value= {videogame.name} 
+                              className="input"/>
+                     {error.name && <p style={{ 'color': 'red' }}>{error.name}</p>}
+                     <br />
+                     
+                     <label htmlFor="">Image URL: </label>
+                     <input onChange={onInputChange} 
+                            placeholder="Enter img URL..." 
+                            name= "background_image" 
+                            type="text" 
+                            value= {videogame.background_image}
+                            className="input" />
+                     <br/>
+
+                  <label htmlFor="">Description: </label>
+                  <input placeholder="Enter a description" 
+                         onChange={onInputChange} 
+                         name= "description" 
+                         type="text" 
+                         value= {videogame.description} 
+                         maxLength="500"
+                         className="inputDescription" />
+                  <br />
+                  </div>
+
+                  <div className="column2">
+                     <label htmlFor="">Release Date: </label>
+                     <input placeholder="YYYY/MM/DD" 
+                            onChange={onInputChange} 
+                            name= "released" 
+                            type="date" 
+                            value= {videogame.released}
+                            className="input" />
+                     {error.released && <p style={{ 'color': 'red' }}>{error.released}</p>}
+                     <br />
+
+                  <label htmlFor="">Rating: </label>          
+                  <input placeholder="5 - 0" 
+                         onChange={onInputChange} 
+                         name= "rating" 
+                         type="number" 
+                         value= {videogame.rating} 
+                         min="0" 
+                         max="5" 
+                         step=".01" 
+                         id="inputRating"
+                         className="input"/>
+                  {error.rating && <p style={{ 'color': 'red' }}>{error.rating}</p>}
+                  <br />
+                  </div>
+                  <div>
+                     <label htmlFor="">Platforms: </label>
+                     <select onChange={setPlatform} className="input">
+                        <option value="" defaultValue>Platforms</option>
+                        <option value={"PC"}>PC</option>
+                        <option value={"Linux"}>Linux</option>
+                        <option value={"macOS"}>macOS</option>
+                        <option value={"iOS"} >iOS</option>
+                        <option value={"Android"} >Android</option>
+                        <option value={"PlayStation 5"} >PlayStation 5 </option>
+                        <option value={"PlayStation 4"} >PlayStation 4 </option>
+                        <option value={"PlayStation 3"} >PlayStation 3 </option>
+                        <option value={"PlayStation 2"} >PlayStation 2 </option>
+                        <option value={"Xbox Series S/X"} >Xbox Series S/X </option>
+                        <option value={"XBOX One"} >XBOX One </option>
+                        <option value={"XBOX 360"} >XBOX 360 </option>
+                        <option value={"XBOX"} >XBOX </option>
+                        <option value={"Nintendo Switch"} >Nintendo Switch </option>
+                        <option value={"Nintendo WiiU"} >Nintendo WiiU </option>
+                        <option value={"Nintendo Wii"} >Nintendo Wii </option>
+                     </select>
+                     {error.platforms && <p style={{ 'color': 'red' }}>{error.platforms}</p>}
+                     {videogame.platforms && <h3>{videogame.platforms.join(" - ")}</h3>}
+                     <br />
+
+
+                     <div className="column2">
+                        <label htmlFor="">Genres: </label>
+                           <select onChange={setGenre} className="selectGenres">
+                              <option value="" defaultValue>Genres</option>
+                              <option value={4} >Action</option>
+                              <option value={3} >Adventure</option>
+                              <option value={11} >Arcade</option>
+                              <option value={28} >Board Games</option>
+                              <option value={17} >Card</option>
+                              <option value={40} >Casual</option>
+                              <option value={34} >Educational</option>
+                              <option value={19} >Family</option>
+                              <option value={6} >Fighting</option>
+                              <option value={51} >Indie</option>
+                              <option value={59} >Massively Multiplayer</option>
+                              <option value={83} >Platformer</option>
+                              <option value={7} >Puzzle</option>
+                              <option value={5} >RPG</option>
+                              <option value={1} >Racing</option>
+                              <option value={2} >Shooter</option>
+                              <option value={14} >Simulation</option>
+                              <option value={15} >Sports</option>
+                              <option value={10} >Strategy</option>
+                           </select>
+                     {error.genres && <p style={{ 'color': 'red' }}>{error.genres}</p>}
+                     {videogame.genres && <h3>{videogame.genres.join(" - ")}</h3>}
+                     </div>
+                  </div>
+                  </div>
+               <input type="submit" value= "Create Game" onSubmit={onSubmit} className="btn" />
+            </form>
+         </div>
+      </div>
      );
  };

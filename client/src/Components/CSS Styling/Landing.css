@@ -12,32 +12,42 @@
   background-size: cover;
 }
 
-.divTextBtn {
-    display: flex;
-    flex-direction: column;
-    padding-top: 220px;
-    padding-left: 190px;
-}
-
 .text {
-    color: rgb(248, 242, 242);
+    
     font-family: 'VideogameTitleFont';
-    font-size: 60px;
-    margin: 0;
-    padding-bottom: 70px;
-    text-shadow: 0 0 80px rgb(163, 160, 196), 0 0 42px #dedef5, 0 0 62px #f8f9fa;
+    margin: 0 auto;
+    position:fixed;
+    font-size: 70px;
+    width:1%;
+    top:70%;
+    right:35%;
+    color: white;
+    /* animation: blink 12s infinite; */
+  
   }
 
-.btn {
+.subtitleText {
+  font-family: 'SubtitleFont';
+  margin: 0 auto;
+  position:fixed;
+  font-size: 30px;
+  width:1%;
+  top:82%;
+  right:23%;
+  color: white;
+}
+
+  .btn {
     font-family: 'BoldBtnFont';
     font-size: 30px;
     color: rgb(240, 235, 245);
-    background-color: #bc24da;
+    background-color: #f500ff;
     border-color: rgb(240, 235, 245);
-    border-radius: 10%;
+    border-radius: 5%;
     cursor: pointer;
     padding: 6px;
-    margin-left: 140px;
+    margin-left: 35px;
+    margin-top: 80px;
   }  
 
 
@@ -56,7 +66,3 @@
     src: url('../../Fonts/VCR_OSD_MONO_1.001.TTF');
   }
 
-  @font-face {
-    font-family: 'HenryProyectFont';
-    src: url('../../Fonts/VCR_OSD_MONO_1.001.TTF');
-  }

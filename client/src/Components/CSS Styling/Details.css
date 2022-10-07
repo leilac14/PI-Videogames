@@ -1,0 +1,98 @@
+.main {
+    width: 100vw;
+    background-color: #4a0964;
+    background-size: cover;
+    justify-content: center;
+    align-content: center;
+}
+
+.img {
+    width:500px;
+  }
+
+.name{
+    font-family: 'Font1';
+    color: white;
+    font-size: 35px;
+}
+
+.description {
+    background-color: #c673bf;
+    color: rgb(62, 61, 61);
+    font-size: 15px;
+    justify-content: center;
+    width: 500px;
+    padding: 15px;
+}
+
+.genre {
+    background-color: #924e8f;
+    color: #e9c9ec;
+    font-size: 13px;
+    justify-content: center;
+    align-content: center;
+    width: 500px;
+    padding: 12px;
+}
+
+.platform {
+    background-color: #e9c9ec;
+    color: rgb(62, 61, 61);
+    font-size: 13px;
+    justify-content: center;
+    width: 500px;
+    padding: 12px;
+}
+
+.released{
+    background-color: #e4aadf;
+    color: rgb(62, 61, 61);
+    font-size: 13px;
+    justify-content: center;
+    width: 500px;
+    padding: 12px;
+}
+
+.rating{
+    background-color: #674064;
+    color: white;
+    font-size: 13px;
+    justify-content: center;
+    align-content: center;
+    width: 500px;
+    padding: 12px;
+}
+
+.atributos{
+    justify-content: center;
+    align-content: center;
+    margin-left: 30.5%;
+}
+
+.backBtn{
+    display: flex;
+    color: rgb(62, 61, 61);
+    background-color: #e4aadf;
+    border-color: #b700ff;
+    border-width: 3px;
+    font-family: 'Font1';
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    width: 120px;
+    justify-content: center;
+
+}
+
+.backBtn:hover {
+    font-size: 26px;
+    color: rgb(240, 235, 245);
+    background-color: #924e8f;
+    border-color: rgb(240, 235, 245);
+}
+
+
+@font-face {
+    font-family: 'Font1';
+    src: url('../../Fonts/VCR_OSD_MONO_1.001.TTF');
+  }

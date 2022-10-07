@@ -10,7 +10,7 @@ export default function LandingPage() {
                     <button className='btn'>PRESS START</button>
             </Link>
             <h1 className='text'> Videogames </h1>
-            <p>A Henry Proyect</p>
+            <p className='subtitleText'>A Henry Proyect</p>
         </div>
     );
 };

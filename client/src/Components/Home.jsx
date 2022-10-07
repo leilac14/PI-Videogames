@@ -12,6 +12,7 @@ import { orderByName, orderByRating } from '../Redux/Actions/index';
 import { Link } from "react-router-dom";
 import loading from '../Assets/loading-img.gif';
 import SearchBar from "./SearchBar";
+import './CSS Styling/Home.css'
 
 export default function Home() {
 
@@ -87,13 +88,15 @@ export default function Home() {
 
 console.log(allVideogames)
     return (
-        <div>
-            <NavBar/>
-            <div>     
-                <div>
+        <div className="mainHomeContainer">
+                <div className="mainNavFiltersContainer">
+                    <div>
+                    <NavBar/>
+                    </div>
+
                     <SortBy handlerByName={handlerByName} handlerByRating={handlerByRating} namechange={namechange} ratingchange={ratingchange}/>
-                    {/* <Filters handlerGenres={handlerGenres} handlerCreated={handlerCreated} source={source} genrechange={genrechange}/> */}
                     <SearchBar />
+                    {/* <Filters handlerGenres={handlerGenres} handlerCreated={handlerCreated} source={source} genrechange={genrechange}/> */}
                     <button onClick={e => {handleClick(e)}} >
                         Reset
                     </button>
@@ -111,17 +114,18 @@ console.log(allVideogames)
 
                         {currentVideogames?.length > 0 ?
                         <div>
-                            {currentVideogames?.map( el => {
-                                id++
-                                return (
-                                    <div key={id}>
-                                        <Card name={el.name} genres={el.genres} background_image={el.background_image} rating={el.rating} id={el.id} createdInDb={el.createdInDb}/>
-                                    </div>
-                                );
+                            <div className="vgCards">
+                                {currentVideogames?.map( el => {
+                                    id++
+                                    return (
+                                        <div key={id}>
+                                            <Card name={el.name} genres={el.genres} background_image={el.background_image} rating={el.rating} id={el.id} createdInDb={el.createdInDb}/>
+                                        </div>
+                                    );
                             })}
+                            </div>
                         
                         <Pagination videogamesPerPage={videogamesPerPage} allVideogames={allVideogames.length} pagination={pagination} currentPage={currentPage}/>
-                        
                         </div> 
                         : 
                         <div>
@@ -130,7 +134,7 @@ console.log(allVideogames)
                         
                     </div>
                 </div>
-            </div>
+        
         </div>
     )
 }

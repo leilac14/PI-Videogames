@@ -1,10 +1,11 @@
 import React from "react";
+import './CSS Styling/SortBy.css'
 
 export default function SortBy({handlerByName, handlerByRating, namechange, ratingchange}) {
 
     return (
         <div>
-            <div>
+            <div className="container">
                 <label>Name </label>
                 <select value={namechange} onChange={(e) => handlerByName(e)}>
                     <option value=''>--Select--</option>
@@ -13,7 +14,7 @@ export default function SortBy({handlerByName, handlerByRating, namechange, rati
                 </select>
             </div>
 
-            <div>
+            <div className="container">
                 <label>Rating</label>
                 <select value={ratingchange} onChange={(e) => handlerByRating(e)}>
                     <option value=''>--Select--</option>

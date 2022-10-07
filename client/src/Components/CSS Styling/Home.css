@@ -1,0 +1,40 @@
+.mainHomeContainer {
+    background-image: url('../../Assets/home-img.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.mainNavFiltersContainer {
+    background-color: #b700ff;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content:space-around;
+
+}
+
+.vgCards {
+    /* justify-content: center;
+    padding: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 auto; */
+    display: grid;
+    flex-direction: row;
+    justify-content: flex-start;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    margin-left: 90px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+
+}
+
+/* .btnExit{
+    background-color: white;
+    border-color: #f500ff;
+    color: #3c0393;
+    border-width: 2px;
+
+    cursor: pointer;
+} */

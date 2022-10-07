@@ -1,0 +1,88 @@
+.mainContainer {
+    /* display: flex;
+    position: fixed;
+    width: 100vw;
+    justify-content: left;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    padding-left: 30px; */
+    background-color: #b700ff;
+    background-size: auto;
+
+}
+
+@media screen and (max-width: 700px) {
+    .mainContainer {
+        width: 100%;
+
+    }
+    
+    .text {
+
+        font-weight: normal;
+        font-size: 18px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}
+
+/* .mainContainer {
+    align-items: center;
+    display: inline-flex;
+    position: relative;
+    justify-content: center;
+    background-color: #b700ff;
+    width: 100%;
+} */
+
+.videogameTitle {
+    text-decoration: none;
+    font-family: 'BoldBtnFont';
+    font-size: 45px;
+    color: white;
+  }
+
+.newGameTitle {
+    text-decoration: none;
+    font-family: 'SubtitleFont';
+    font-size: 25px;
+    color: white;
+}
+
+.mainBtn {
+    display: inline-flex;
+    justify-content: center;
+    width: 240px;
+    margin: 6px;
+    padding: 13px;
+    font-family: 'BoldBtnFont';
+    font-size: 35px;
+    color: white;
+}
+
+a:-webkit-any-link {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn{
+    display: inline-flex;
+    justify-content: center;
+    width: 160px;
+    margin: 6px;
+    padding: 11px;
+    font-family: 'SubtitleFont';
+    font-size: 20px;
+    color: white; 
+}
+  
+@font-face {
+    font-family: 'BoldBtnFont';
+    src: url('../../Fonts/UPHEAVTT.TTF');
+}
+
+@font-face {
+    font-family: 'SubtitleFont';
+    src: url('../../Fonts/VCR_OSD_MONO_1.001.TTF');
+}
