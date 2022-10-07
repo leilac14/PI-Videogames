@@ -103,7 +103,7 @@ console.log(allVideogames)
                 </div>
 
                 <div>
-                    <h1>VIDEOGAME INFORMATION</h1>
+                    <h1 className="vgInfoHome">VIDEOGAME INFORMATION</h1>
                 
                     <Pagination videogamesPerPage={videogamesPerPage} allVideogames={allVideogames.length} pagination={pagination} currentPage={currentPage}/>
                     

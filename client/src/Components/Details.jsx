@@ -27,7 +27,9 @@ export default function Details() {
             {
                 videogame ? 
                 <div>
+                        <div className="mainNavFiltersContainer">
                         <NavBar />
+                        </div>
                         <h1 className="name"> {videogame.name} </h1>
                         <img className="img" src={videogame.background_image} alt="Image not Found" />
                             <div className="atributos">

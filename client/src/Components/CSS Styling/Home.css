@@ -14,11 +14,6 @@
 }
 
 .vgCards {
-    /* justify-content: center;
-    padding: 20px;
-    display: flex;
-    flex-flow: row wrap;
-    margin: 0 auto; */
     display: grid;
     flex-direction: row;
     justify-content: flex-start;
@@ -28,6 +23,19 @@
     margin-bottom: 10px;
     margin-top: 5px;
 
+}
+
+.vgInfoHome{
+    font-family:'VideogameInformationHome';
+    font-size: 35px;
+    color: white;
+    text-shadow: 2px 2px #b700ff;
+    box-shadow:0 0 5px #9027f1, 0 0 15px #9027f1, 0 0 20px #9027f1, 0 0 40px #9027f1, 0 0 60px #0066ff, 0 0 10px #177eed, 0 0 98px #8cf5ff75;
+}
+
+@font-face {
+    font-family: 'VideogameInformationHome';
+    src: url('../../Fonts/04B_30_.TTF');
 }
 
 /* .btnExit{
