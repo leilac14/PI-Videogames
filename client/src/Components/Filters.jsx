@@ -26,11 +26,15 @@ export default function Filters({handlerGenres, handlerCreated, source, genrecha
                             <option value={g.name} key={g.id}>{g.name}</option>
                         ))
                     }
-                    {/* <option value='Api'>RAWG</option>
-                    <option value='DB'>Created</option> */}
                 </select>
 
                 {/* SOURCE */}
+
+                <div>
+                    <button style={source === "All"? {backgroundColor: "#6700ff", color: "white", borderColor: "white"} : undefined} onClick={() => handlerCreated('All')} >ALL</button>
+                    <button style={source === "Created"? {backgroundColor: "#6700ff", color: "white", borderColor: "white"} : undefined} onClick={() => handlerCreated('Created')}>CREATED</button>
+                    <button style={source === "Api"? {backgroundColor: "#6700ff", color: "white", borderColor: "white"} : undefined} onClick={() => handlerCreated('Api')}>RAWG</button>
+                </div>            
         </div>
 )
 }

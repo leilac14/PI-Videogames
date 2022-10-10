@@ -43,7 +43,6 @@ export default function CreateGame() {
  
     function setGenre(e) {
        if (!videogame.genres.includes(e.target.value)) {
-          //genreArr.push(e.target.value)
           setVideogame({
             ...videogame,
             genres: [...videogame.genres, e.target.value]
@@ -65,17 +64,16 @@ export default function CreateGame() {
        };
     }; 
 
-    //function handlerDeletePlatform(el) {
-    //platforms: plats.platforms.filter(p => p !== el)
-    //}
  
     function onInputChange(e) {
          e.preventDefault()
          setVideogame({
              ...videogame,
              [e.target.name]: e.target.value,
-             platforms: plats,
-             genres: check,
+            //  platforms: plats,
+            //  genres: check,
+             [e.target.platforms]: e.target.value,
+             [e.target.genres]: e.target.value,
              [e.target.released]: e.target.value,
              [e.target.rating]: e.target.value,
              [e.target.playtime]: e.target.value,

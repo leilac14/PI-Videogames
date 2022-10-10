@@ -7,7 +7,7 @@ export default function LandingPage() {
     return (
         <div className='divLanding'>
             <Link to = "/home">
-                    <button className='btn'>PRESS START</button>
+                    <button className='btnLanding'>PRESS START</button>
             </Link>
             <h1 className='text'> Videogames </h1>
             <p className='subtitleText'>A Henry Proyect</p>

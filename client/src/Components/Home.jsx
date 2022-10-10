@@ -62,14 +62,14 @@ export default function Home() {
         console.log(e.target.value)
     }
     
-    // function handlerCreated(e) {
-    //     dispatch(filterByCreated(e));
-    //     console.log(e);
-    //     setSource(e);
-    //     setCurrentPage(1);
-    //     setGenrechange("");
-    //     setOrder("Order" + e)
-    // }
+    function handlerCreated(e) {
+        dispatch(filterByCreated(e));
+        console.log(e);
+        setSource(e);
+        setCurrentPage(1);
+        setGenrechange("");
+        setOrder("Order" + e)
+    }
 
     function handlerByName(e) { 
         dispatch(orderByName(e.target.value))
@@ -97,7 +97,7 @@ console.log(allVideogames[0]?.genres.name)
 
                     <SortBy handlerByName={handlerByName} handlerByRating={handlerByRating} namechange={namechange} ratingchange={ratingchange}/>
                     <SearchBar />
-                    <Filters handlerGenres={handlerGenres} genrechange={genrechange} />
+                    <Filters handlerGenres={handlerGenres} genrechange={genrechange} handlerCreated={handlerCreated} source={source}/>
                     {/* <Filters handlerGenres={handlerGenres} handlerCreated={handlerCreated} source={source} genrechange={genrechange}/> */}
                     <button onClick={e => {handleClick(e)}} >
                         Reset

@@ -3,7 +3,6 @@ const initialState = {
     allVideogames: [],
     genres: [],
     detail: [],
-    videogamesByName: [],
 }
 
 function rootReducer (state = initialState, action) {
@@ -78,6 +77,15 @@ function rootReducer (state = initialState, action) {
                 videogames: action.payload === 'asc' ? orderRatingAsc : orderRatingAsc.reverse()
             }
 
+        case 'FILTER_CREATED':
+            const allVideogames2 = state.allVideogames;
+            const filteredCreation = action.payload === 'Created' ? allVideogames2.filter(el => el.id.length === 36) : allVideogames2.filter(el => el.id.length !== 36);
+    
+            return {
+                ...state,
+                videogames: action.payload === 'All' ? allVideogames2 : filteredCreation
+            }
+        
         case 'GET_NAME_VIDEOGAMES':
             return {
                 ...state,
