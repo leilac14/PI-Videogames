@@ -3,12 +3,12 @@
 }
 
 .btns{
-    font-size: 16px;
+    font-size: 21px;
     font-weight: bold;
-    color: #430572;
-    border-color: rgb(255, 255, 255);
-    background-color: #b700ff;
-    border-width: 1px;
+    color: #9f04dc;
+    border-color: #b700ff;
+    background-color: white;
+    border-width: 2px;
     border-radius: 10%;
     cursor: pointer;
     margin-right: 8px;
@@ -17,5 +17,5 @@
 
 .btns:hover {
     font-size: 18px;
-    background-color: #ffffff;
+    background-color: #00dfff;
 }

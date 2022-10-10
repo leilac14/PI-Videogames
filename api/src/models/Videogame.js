@@ -16,7 +16,7 @@ module.exports = (sequelize) => {
     },
     background_image: {
       type: DataTypes.TEXT,
-      defaultValue: 'https://upload.wikimedia.org/wikipedia/en/f/fd/Logo_of_Stardew_Valley.png',
+      defaultValue: 'https://as1.ftcdn.net/v2/jpg/04/44/05/00/1000_F_444050065_Mx9aD1AoWBypuPiA8LdDVHB6bGPhH1SN.jpg',
     },
     description:{
       type: DataTypes.STRING(50000),

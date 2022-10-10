@@ -13,6 +13,7 @@ export default function Card({id, name, background_image, genres, rating}) {
             <div className="div2">
             <h4 className="genreText">{genres?.map(g => g.name).join(", ")}</h4>
             <h4 className="divRating">{rating}</h4>
+            
             </div>
         </div>
     )

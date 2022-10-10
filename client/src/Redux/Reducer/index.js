@@ -2,7 +2,8 @@ const initialState = {
     videogames: [],
     allVideogames: [],
     genres: [],
-    detail: []
+    detail: [],
+    videogamesByName: [],
 }
 
 function rootReducer (state = initialState, action) {
@@ -20,21 +21,25 @@ function rootReducer (state = initialState, action) {
                 genres: action.payload
             }
             
+
+
         case 'FILTER_BY_GENRES':
+            let filtrados = [];
             const allVideogames = state.allVideogames;
-            const filteredGenre = action.payload === 'All'? allVideogames : allVideogames.filter(v => v.genres?.find(v => v === action.payload));
+            let filteredGenre = action.payload === 'All'? allVideogames : allVideogames.map(v => {for (let i = 0; i < v.genres.length; i++) {
+                if (v.genres[i].name === action.payload) {
+                    filtrados.push(v)
+                }  
+            }});
+            if (filtrados.length > 0) {
+                filteredGenre = filtrados
+            }else{
+                filteredGenre = allVideogames
+            }
+            
             return {
                 ...state,
                 videogames: filteredGenre
-            }
-        
-        case 'FILTER_CREATED':
-            const allVideogames2 = state.allVideogames;
-            const filteredCreation = action.payload === 'Created' ? allVideogames2.filter(el => el.createdInDb) : allVideogames2.filter(el => !el.createdInDb);
-
-            return {
-                ...state,
-                videogames: action.payload === 'All' ? allVideogames2 : filteredCreation
             }
         
         

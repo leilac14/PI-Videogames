@@ -2,7 +2,12 @@
   background-color: #6700ff;
   border: 2px solid #b700ff;
   border-radius: 5%;
-  width: 300px;
+  width: 17vw;
+  height: 17rem;
+  margin: 1px 0 2px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 
 }
 
@@ -10,17 +15,12 @@
   font-family: 'titleFont';
   font-size: 20px;
   color: white;
-  /* margin-left: auto;
-  margin-right: auto;
-  font-weight: bold;
-  padding-left: 6px;
-  padding-right: 6px;
-  margin-top: 12px;
-  margin-bottom: 12px; */
 }
 
 .cardImg {
-    width: 100%;
+    width: 17vw;
+    max-width: fit-content;
+    height: fit-content;
   }
 
 .div2{

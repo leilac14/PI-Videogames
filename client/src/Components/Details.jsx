@@ -10,7 +10,7 @@ import './CSS Styling/Details.css'
 
 
 export default function Details() {
-    let [videogame, setVideogame] = useState(null)
+    let [videogame, setVideogame] = useState(null) //xq es null?
     let {id} = useParams()
 
     useEffect(() => {
@@ -23,7 +23,7 @@ export default function Details() {
         }
     }, [id]);
 
-    return <div className="main">
+    return <div className="mainDetails">
             {
                 videogame ? 
                 <div>
@@ -53,7 +53,7 @@ export default function Details() {
                 </div>  
                 : 
                 <div>
-                        <img src={loading} alt="loading..." />
+                        <img src={loading} alt="loading..." width="300px" />
                 </div>
             }
 

@@ -6,7 +6,6 @@ export default function Nav() {
     return(
         <>
             <div className='mainContainer'>
-                {/* <h1 className='videogameTitle'>Videogames</h1> */}
                 <Link to = '/home'>
                     <h1 className='videogameTitle'> Videogames</h1>
                 </Link>

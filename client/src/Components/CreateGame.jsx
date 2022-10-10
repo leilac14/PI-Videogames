@@ -84,10 +84,6 @@ export default function CreateGame() {
          });
      };
      
-    function swapGenre(arr) {
-        
-    }  
-     
      function onSubmit(e) {
          e.preventDefault();
          let regexDate = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/
@@ -96,7 +92,7 @@ export default function CreateGame() {
                ...error,
                name: 'Name cannot be blank'
             });
-          } else if (!/\S/.test(videogame.name)) {
+         } else if (!/\S/.test(videogame.name)) {
              setError(error = {
                ...error,
                name: 'Name cannot be an empty space'
@@ -112,7 +108,7 @@ export default function CreateGame() {
                  ...error,
                  genres: 'Must select at least one genre'
               })
-          } else {
+         } else {
              setError(error = {
                 ...error,
                 genres: ""

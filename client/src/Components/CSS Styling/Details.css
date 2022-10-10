@@ -1,9 +1,8 @@
-.main {
-    width: 100vw;
-    background-color: #4a0964;
+.mainDetails {
+    background-image: url('../../Assets/home-img.jpg');
     background-size: cover;
-    justify-content: center;
-    align-content: center;
+    background-attachment: fixed;
+
 }
 
 .img {

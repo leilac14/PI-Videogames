@@ -1,9 +1,39 @@
-// import React from "react";
-// import { useEffect } from "react";
-// import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getGenres } from "../Redux/Actions";
 // import { sort, filter } from '../Redux/Actions/index';
 // import { base, library, userMade, Action, Puzzle, Indie, Adventure, Arcade, RPG, Strategy, Shooter, Casual, Simulation, Racing, Platformer, Massively_Multiplayer, Sports, Fighting, Board_Games, Card, Educational, Family } from '../Constants/index';
 
+export default function Filters({handlerGenres, handlerCreated, source, genrechange}) {
+
+    const dispatch = useDispatch();
+    const genres = useSelector(state => state.genres);
+
+    useEffect(() => {
+        dispatch(getGenres());
+    }, [dispatch]);
+
+    return(
+        <div>
+                {/* GENRES */}
+
+                <select value={genrechange} onChange={(e) => handlerGenres(e)}>
+                    <option value='All'>--Genres--</option>
+                    <option value='All'>All</option>
+                    {
+                        genres && genres.map(g => (
+                            <option value={g.name} key={g.id}>{g.name}</option>
+                        ))
+                    }
+                    {/* <option value='Api'>RAWG</option>
+                    <option value='DB'>Created</option> */}
+                </select>
+
+                {/* SOURCE */}
+        </div>
+)
+}
 // export default function Order() {
 //     let dispatch = useDispatch();
 

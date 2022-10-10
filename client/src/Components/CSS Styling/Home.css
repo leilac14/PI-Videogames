@@ -10,7 +10,6 @@
     align-items: center;
     position: relative;
     justify-content:space-around;
-
 }
 
 .vgCards {
@@ -18,8 +17,8 @@
     flex-direction: row;
     justify-content: flex-start;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 15px;
-    margin-left: 90px;
+    grid-gap: 35px;
+    margin-left: 130px;
     margin-bottom: 10px;
     margin-top: 5px;
 

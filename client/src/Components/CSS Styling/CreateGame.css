@@ -118,7 +118,7 @@ label {
     src: url('../../Fonts/VCR_OSD_MONO_1.001.TTF')
 }
 
-@media screen and (max-width: 700px) {
+/* @media screen and (max-width: 700px) {
 
     .create {
         margin-top: 85px;
@@ -173,4 +173,4 @@ label {
         font-size: 20px;
     }
 
-}
+} */
