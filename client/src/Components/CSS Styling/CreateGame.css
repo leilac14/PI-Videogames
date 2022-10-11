@@ -13,6 +13,7 @@
     margin-left: auto;
     margin-top: 35px;
     width: fit-content;
+
 }
 
 
@@ -58,7 +59,7 @@ label {
     background-color: #f0def5;
     border-color: rgb(146, 74, 212);
     border-radius: 8%;
-    font-size: 15px;
+    font-size: 13px;
     width: 190px;
 }
 
@@ -66,27 +67,8 @@ label {
     padding-right: 20px;
 }
 
-.mainMultiSelect {
-    display: flex;
-    margin-top: 10px;
-}
 
-.multiSelect {
-    color: #f0def5;
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-
-.btnMultiSelect {
-    height: 20px;
-    margin-left: 5px;
-    background-color: #f500ff;
-    color: #f0def5;
-    border-color: #f0def5;
-    font-family: monospace;
-}
-
-.btn {
+.createGameBtn {
     color: rgb(240, 235, 245);
     background-color: #8a00ff;
     border-color: rgb(240, 235, 245);
@@ -100,7 +82,7 @@ label {
     font-size: 22px;
 }
 
-.btn:hover {
+.createGameBtn:hover {
     color: #f0def5;
     background-color: #f500ff;
     border-color: rgb(146, 74, 212);
@@ -126,60 +108,3 @@ label {
     font-family: 'text';
     src: url('../../Fonts/VCR_OSD_MONO_1.001.TTF')
 }
-
-/* @media screen and (max-width: 700px) {
-
-    .create {
-        margin-top: 85px;
-        margin-bottom: 20px;
-        width: 80%;
-    }
-    
-    .title {
-        font-size: 22px;
-    }
-    
-    .data {
-        display: block;
-        padding-left: auto;
-        padding-right: 0px;
-    }
-
-    label {
-        font-size: 17px;
-    }
-
-    .input {
-        width: 95%;
-        font-size: 12px;
-    }
-
-    .column1 {
-        margin-bottom: 20px;
-    }
-
-    .column2 {
-        margin-bottom: 20px;
-    }
-
-    .inputDescription {
-        height: 60px;
-        width: 95%;
-        font-size: 12px;
-    }
-
-    #inputRating {
-        width: 88%;
-    }
-
-    .selectGenres {
-        width: 90%;
-    }
-
-    .btn {
-        margin-top: 35px;
-        margin-bottom: 30px;
-        font-size: 20px;
-    }
-
-} */

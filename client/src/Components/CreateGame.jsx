@@ -1,14 +1,11 @@
-import React, { useLayoutEffect } from "react";
+import React from "react";
 import axios from 'axios'
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { postVideogames, getGenres } from '../Redux/Actions/index';
-import { Action, Puzzle, Indie, Adventure, Arcade, RPG, Strategy, Shooter, Casual, Simulation, Racing, Platformer, Massively_Multiplayer, Sports, Fighting, Board_Games, Card, Educational, Family } from '../Constants/index'
+import { getGenres } from '../Redux/Actions/index';
 import { useDispatch, useSelector } from "react-redux";
 import NavBar from '../Components/NavBar';
 import './CSS Styling/CreateGame.css'
-import SearchBar from "./SearchBar";
-import SortBy from "./SortBy";
 
 export default function CreateGame() {
     let dispatch = useDispatch()
@@ -320,7 +317,7 @@ export default function CreateGame() {
                      </div>
                   </div>
                   </div>
-               <input type="submit" value= "Create Game" onSubmit={onSubmit} className="btn" />
+               <input type="submit" value= "Create Game" onSubmit={onSubmit} className="createGameBtn" />
             </form>
          </div>
       </div>
