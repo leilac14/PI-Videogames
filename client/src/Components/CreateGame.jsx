@@ -19,8 +19,7 @@ export default function CreateGame() {
 
     const genres = useSelector(state => state.genres)
     const history = useHistory();
-    const [check, setCheck] = useState([]);
-    const [plats, setPlats] = useState([]);
+
 
 
     const [videogame, setVideogame] = useState({
@@ -48,19 +47,24 @@ export default function CreateGame() {
             genres: [...videogame.genres, e.target.value]
           })
        } else {
-          setCheck([...check].filter(j => j !== e.target.value))
+         setVideogame({
+            ...videogame,
+            genres: videogame.genres.filter(v => v !== e.target.value)
+         })
        };
     };
  
     function setPlatform(e) {
        if (!videogame.platforms.includes(e.target.value)) {
-          //platformArr.push(e.target.value)
           setVideogame({
             ...videogame,
             platforms: [...videogame.platforms, e.target.value]
           })
        } else {
-          setPlats([...plats].filter(j => j !== e.target.value))
+          setVideogame({
+            ...videogame,
+            platforms: videogame.platforms.filter(v => v !== e.target.value)
+          })
        };
     }; 
 
@@ -70,8 +74,6 @@ export default function CreateGame() {
          setVideogame({
              ...videogame,
              [e.target.name]: e.target.value,
-            //  platforms: plats,
-            //  genres: check,
              [e.target.platforms]: e.target.value,
              [e.target.genres]: e.target.value,
              [e.target.released]: e.target.value,
@@ -144,7 +146,7 @@ export default function CreateGame() {
                rating: ""
             })
          };
-         if (!videogame.genres.length) {
+         if (!videogame.platforms.length) {
              setError(error = {
                  ...error,
                  platforms: 'Must introduce at least one platform'
@@ -164,6 +166,22 @@ export default function CreateGame() {
          };
      };
      
+     function handleDeletePlatforms(e, p) {
+      e.preventDefault()
+      setVideogame({
+        ...videogame,
+        platforms: videogame.platforms.filter(t => t !== p)
+      })
+    }
+
+    function handleDeleteGenres(e, p) {
+      e.preventDefault()
+      setVideogame({
+        ...videogame,
+        genres: videogame.genres.filter(t => t !== p)
+      })
+    }
+
      console.log(videogame)
 
      return (
@@ -256,7 +274,14 @@ export default function CreateGame() {
                         <option value={"Nintendo Wii"} >Nintendo Wii </option>
                      </select>
                      {error.platforms && <p style={{ 'color': 'red' }}>{error.platforms}</p>}
-                     {videogame.platforms && <h3>{videogame.platforms.join(" - ")}</h3>}
+                     <div className="deleteBtns">
+                        {videogame.platforms.map((d, i) => (
+                        <div key={i}>
+                           <button className="deleteBtns" onClick={(e) => handleDeletePlatforms(e, d)}>{d}</button>
+                        </div>
+                     ))}
+                     </div>
+                     
                      <br />
 
 
@@ -264,28 +289,34 @@ export default function CreateGame() {
                         <label htmlFor="">Genres: </label>
                            <select onChange={setGenre} className="selectGenres">
                               <option value="" defaultValue>Genres</option>
-                              <option value={4} >Action</option>
-                              <option value={3} >Adventure</option>
-                              <option value={11} >Arcade</option>
-                              <option value={28} >Board Games</option>
-                              <option value={17} >Card</option>
-                              <option value={40} >Casual</option>
-                              <option value={34} >Educational</option>
-                              <option value={19} >Family</option>
-                              <option value={6} >Fighting</option>
-                              <option value={51} >Indie</option>
-                              <option value={59} >Massively Multiplayer</option>
-                              <option value={83} >Platformer</option>
-                              <option value={7} >Puzzle</option>
-                              <option value={5} >RPG</option>
-                              <option value={1} >Racing</option>
-                              <option value={2} >Shooter</option>
-                              <option value={14} >Simulation</option>
-                              <option value={15} >Sports</option>
-                              <option value={10} >Strategy</option>
+                              <option value={4} >Action-4</option>
+                              <option value={3} >Adventure-3</option>
+                              <option value={11} >Arcade-11</option>
+                              <option value={28} >Board Games-28</option>
+                              <option value={17} >Card-17</option>
+                              <option value={40} >Casual-40</option>
+                              <option value={34} >Educational-34</option>
+                              <option value={19} >Family-19</option>
+                              <option value={6} >Fighting-6</option>
+                              <option value={51} >Indie-51</option>
+                              <option value={59} >Massively Multiplayer-59</option>
+                              <option value={83} >Platformer-83</option>
+                              <option value={7} >Puzzle-7</option>
+                              <option value={5} >RPG-5</option>
+                              <option value={1} >Racing-1</option>
+                              <option value={2} >Shooter-2</option>
+                              <option value={14} >Simulation-14</option>
+                              <option value={15} >Sports-15</option>
+                              <option value={10} >Strategy-10</option>
                            </select>
                      {error.genres && <p style={{ 'color': 'red' }}>{error.genres}</p>}
-                     {videogame.genres && <h3>{videogame.genres.join(" - ")}</h3>}
+                     <div className="deleteBtns">
+                        {videogame.genres.map((d, i) => (
+                        <div key={i}>
+                           <button className="deleteBtns" onClick={(e) => handleDeleteGenres(e, d)}>{d}</button>
+                        </div>
+                     ))}
+                     </div>
                      </div>
                   </div>
                   </div>

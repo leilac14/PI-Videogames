@@ -98,7 +98,6 @@ console.log(allVideogames[0]?.genres.name)
                     <SortBy handlerByName={handlerByName} handlerByRating={handlerByRating} namechange={namechange} ratingchange={ratingchange}/>
                     <SearchBar />
                     <Filters handlerGenres={handlerGenres} genrechange={genrechange} handlerCreated={handlerCreated} source={source}/>
-                    {/* <Filters handlerGenres={handlerGenres} handlerCreated={handlerCreated} source={source} genrechange={genrechange}/> */}
                     <button onClick={e => {handleClick(e)}} >
                         Reset
                     </button>

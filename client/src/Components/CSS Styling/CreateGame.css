@@ -108,6 +108,15 @@ label {
 }
 
 
+.deleteBtns{
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 4px;
+}
+
 @font-face {
     font-family: 'VideogameTitleFont';
     src: url('../../Fonts/UPHEAVTT.TTF');
