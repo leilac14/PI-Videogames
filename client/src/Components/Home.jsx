@@ -1,15 +1,15 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { getVideogames } from '../Redux/Actions/index';
+import { filterByGenres, filterByCreated } from '../Redux/Actions/index';
+import { orderByName, orderByRating } from '../Redux/Actions/index';
 import NavBar from './NavBar';
 import Card from './Card';
 import Pagination from './Pagination';
 import SortBy from './SortBy';
 import Filters from './Filters';
-import { filterByGenres, filterByCreated } from '../Redux/Actions/index';
-import { orderByName, orderByRating } from '../Redux/Actions/index';
-import { Link } from "react-router-dom";
 import loading from '../Assets/loading-img.gif';
 import SearchBar from "./SearchBar";
 import './CSS Styling/Home.css'
@@ -87,7 +87,6 @@ export default function Home() {
         setOrder("Order" + e.target.value); 
     }
 
-console.log(allVideogames[0]?.genres.name)
     return (
         <div className="mainHomeContainer">
                 <div className="mainNavFiltersContainer">
@@ -99,7 +98,7 @@ console.log(allVideogames[0]?.genres.name)
                     <SearchBar />
                     <Filters handlerGenres={handlerGenres} genrechange={genrechange} handlerCreated={handlerCreated} source={source}/>
                     <button className="homeBtns" onClick={e => {handleClick(e)}} >
-                        Reset
+                        RESET
                     </button>
                 </div>
 
@@ -120,7 +119,7 @@ console.log(allVideogames[0]?.genres.name)
                                     id++
                                     return (
                                         <div key={id}>
-                                            <Card name={el.name} genres={el.genres} background_image={el.background_image} rating={el.rating} id={el.id} createdInDb={el.createdInDb}/>
+                                            <Card name={el.name} genres={el.genres} background_image={el.background_image} rating={el.rating} id={el.id}/>
                                         </div>
                                     );
                             })}

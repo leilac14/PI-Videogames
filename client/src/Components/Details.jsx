@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import loading from '../Assets/loading-img.gif'
 import NavBar from '../Components/NavBar'
-import { getVideogames } from "../Redux/Actions";
 import './CSS Styling/Details.css'
 
 
