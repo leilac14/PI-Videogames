@@ -48,7 +48,12 @@
     padding: 6px;
     margin-left: 35px;
     margin-top: 80px;
-  }  
+  } 
+  
+  .btnLanding:hover {
+    background-color: #6700ff;
+    font-size: 33px;
+  }
 
 
   @font-face {

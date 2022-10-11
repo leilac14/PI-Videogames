@@ -59,7 +59,6 @@ label {
     border-color: rgb(146, 74, 212);
     border-radius: 8%;
     font-size: 15px;
-    font-family: monospace;
     width: 190px;
 }
 
@@ -105,6 +104,7 @@ label {
     color: #f0def5;
     background-color: #f500ff;
     border-color: rgb(146, 74, 212);
+    font-size: 20px;
 }
 
 
