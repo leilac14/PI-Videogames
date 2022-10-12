@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ErrorNotFound from '../Assets/errornotfound.gif'
+import ErrorNotFoundImg from '../Assets/errornotfound.gif'
 
 export default function ErrorNotFound() {
     return (
@@ -15,7 +15,7 @@ export default function ErrorNotFound() {
             ⚠️Sorry, This Content Was Not Found!⚠️
           </h2>
           <img
-            src={ErrorNotFound}
+            src={ErrorNotFoundImg}
             alt="Image Not Found"
           />
           </div>

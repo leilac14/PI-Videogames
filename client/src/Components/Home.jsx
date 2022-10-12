@@ -30,7 +30,6 @@ export default function Home() {
     const [genrechange, setGenrechange] = useState('');
     const [, setOrder] = useState()
 
-    let id = 0
 
     const pagination = (pageNumber) => {
         setCurrentPage(pageNumber);
@@ -87,6 +86,8 @@ export default function Home() {
         setOrder("Order" + e.target.value); 
     }
 
+console.log(allVideogames)
+
     return (
         <div className="mainHomeContainer">
                 <div className="mainNavFiltersContainer">
@@ -116,9 +117,8 @@ export default function Home() {
                         <div>
                             <div className="vgCards">
                                 {currentVideogames?.map( el => {
-                                    id++
                                     return (
-                                        <div key={id}>
+                                        <div key={el.id}>
                                             <Card name={el.name} genres={el.genres} background_image={el.background_image} rating={el.rating} id={el.id}/>
                                         </div>
                                     );
