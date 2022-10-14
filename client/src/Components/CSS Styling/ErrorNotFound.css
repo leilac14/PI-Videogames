@@ -1,19 +1,8 @@
-.containerErrorNotFound{
-    background-image: url('../../Assets/404errorbg.png');
-    background-size: cover;
-    background-attachment: fixed;
-}
 
-.errorMsgContainer{
-    background-image: linear-gradient(
-        to left,
-        hsla(60, 88%, 94%, 0.616),
-        hsla(31, 89%, 57%, 0.623))
-}
 
 .errorText{
-    color: rgb(85, 14, 151);
+    color: rgb(255, 255, 255);
     font-size: 35px;
-    text-shadow: -2px 1px 5px rgb(247, 242, 242);
+    text-shadow: -2px 1px 5px rgb(125, 5, 146);
 }
 

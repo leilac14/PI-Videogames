@@ -22,8 +22,6 @@
     top:70%;
     right:35%;
     color: white;
-    /* animation: blink 12s infinite; */
-  
   }
 
 .subtitleText {
@@ -33,7 +31,7 @@
   font-size: 30px;
   width:1%;
   top:82%;
-  right:23%;
+  right:15%;
   color: white;
 }
 

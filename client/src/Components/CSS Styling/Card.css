@@ -2,8 +2,8 @@
   background-color: #6700ff;
   border: 2px solid #b700ff;
   border-radius: 5%;
-  width: 17vw;
-  height: 17rem;
+  width: 240px;
+  height: 300px;
   margin: 1px 0 2px 0;
   display: flex;
   flex-direction: column;
@@ -18,10 +18,11 @@
 }
 
 .cardImg {
-    width: 17vw;
-    max-width: fit-content;
-    height: fit-content;
-  }
+  align-content: center;
+    max-width: 240px;
+    max-height: 140px;
+}
+
 
 .div2{
     display: flex;

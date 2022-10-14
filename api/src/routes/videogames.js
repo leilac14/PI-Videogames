@@ -21,9 +21,6 @@ router.get("/", async (req, res, next) => {
                         [Op.iLike]: "%" + name + "%"
                     }
                 },
-                // order: [
-                //     ["name", "ASC"]
-                // ]
             })
             let videogameAPI = await axios(`https://api.rawg.io/api/games?search=${name}&key=${API_KEY}`)
             if (videogameDB.length) {
@@ -31,7 +28,11 @@ router.get("/", async (req, res, next) => {
             } else {
                 videogame = videogameAPI.data.results
             }
-            return res.status(200).json(videogame)
+            if(videogame.length === 0){
+                return res.send("not found")
+            }else{
+                return res.status(200).json(videogame)
+            }
         } catch (error) {
             next(error)
         }

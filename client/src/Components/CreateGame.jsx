@@ -14,10 +14,7 @@ export default function CreateGame() {
         dispatch(getGenres())
     }, [dispatch])
 
-    const genres = useSelector(state => state.genres)
     const history = useHistory();
-
-
 
     const [videogame, setVideogame] = useState({
          name: "",
@@ -167,7 +164,7 @@ export default function CreateGame() {
       e.preventDefault()
       setVideogame({
         ...videogame,
-        platforms: videogame.platforms.filter(t => t !== p)
+        platforms: videogame.platforms.filter(pl => pl !== p)
       })
     }
 
@@ -175,7 +172,7 @@ export default function CreateGame() {
       e.preventDefault()
       setVideogame({
         ...videogame,
-        genres: videogame.genres.filter(t => t !== p)
+        genres: videogame.genres.filter(g => g !== p)
       })
     }
 

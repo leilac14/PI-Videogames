@@ -2,8 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getVideogames } from '../Redux/Actions/index';
-import { filterByGenres, filterByCreated } from '../Redux/Actions/index';
+import { getVideogames, filterByGenres, filterByCreated } from '../Redux/Actions/index';
 import { orderByName, orderByRating } from '../Redux/Actions/index';
 import NavBar from './NavBar';
 import Card from './Card';
@@ -12,6 +11,7 @@ import SortBy from './SortBy';
 import Filters from './Filters';
 import loading from '../Assets/loading-img.gif';
 import SearchBar from "./SearchBar";
+import ErrorNotFound from "./ErrorNotFound";
 import './CSS Styling/Home.css'
 
 export default function Home() {
@@ -87,6 +87,7 @@ export default function Home() {
     }
 
 console.log(allVideogames)
+console.log(currentVideogames)
 
     return (
         <div className="mainHomeContainer">
@@ -94,13 +95,13 @@ console.log(allVideogames)
                     <div>
                     <NavBar/>
                     </div>
-
+                    {typeof currentVideogames !== "string" ? <>
                     <SortBy handlerByName={handlerByName} handlerByRating={handlerByRating} namechange={namechange} ratingchange={ratingchange}/>
-                    <SearchBar />
+                    <SearchBar setCurrentPage={setCurrentPage}/>
                     <Filters handlerGenres={handlerGenres} genrechange={genrechange} handlerCreated={handlerCreated} source={source}/>
                     <button className="homeBtns" onClick={e => {handleClick(e)}} >
                         RESET
-                    </button>
+                    </button></> : <></>}
                 </div>
 
                 <div>
@@ -113,7 +114,10 @@ console.log(allVideogames)
                             <button className="homeBtns">EXIT</button>
                         </Link>
 
-                        {currentVideogames?.length > 0 ?
+                        {typeof currentVideogames === "string" ? (
+                            <ErrorNotFound />
+                        ) :
+                        currentVideogames?.length > 0 ?
                         <div>
                             <div className="vgCards">
                                 {currentVideogames?.map( el => {
@@ -129,7 +133,7 @@ console.log(allVideogames)
                         </div> 
                         : 
                         <div>
-                            <img src={loading} alt="Image not Found" width="150px"/>
+                            <img src={loading} alt="Image not Found" width="370px"/>
                         </div>}
                         
                     </div>
@@ -138,3 +142,4 @@ console.log(allVideogames)
         </div>
     )
 }
+

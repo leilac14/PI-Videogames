@@ -42,36 +42,6 @@ export function getVideogameById(payload) {
 }
 
 
-// export function clearVideogame() {
-//     return function(dispatch) {
-//         return dispatch({
-//             type: 'GET_ID_VIDEOGAME',
-//             payload: []
-//         })
-//     }
-// }
-
-
-// export function postVideogames(payload) {
-//     return function() {
-//         axios.post("http://localhost:3001/api/videogames", payload)
-//             .then(response => {
-//                 return response
-//             })
-//     }
-// }
-
-
-// export const deleteVideogame = (id) => {
-//     return function() {
-//         axios.get(`http://localhost:3001/api/videogames/${id}`)
-//             .then(response => {
-//                 return response
-//             })
-//     }  
-// }
-
-
 export function getGenres() {
     return function(dispatch) {
         axios.get("http://localhost:3001/api/genres")
@@ -113,5 +83,11 @@ export function orderByRating(payload) {
     return {
         type: 'ORDER_BY_RATING',
         payload
+    }
+}
+
+export function cleanHome() {
+    return {
+        type: 'CLEAN_HOME'
     }
 }

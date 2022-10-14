@@ -28,14 +28,14 @@
     font-family:'VideogameInformationHome';
     font-size: 35px;
     color: white;
-    text-shadow: 2px 2px #b700ff;
-    box-shadow:0 0 5px #9027f1, 0 0 15px #9027f1, 0 0 20px #9027f1, 0 0 40px #9027f1, 0 0 60px #0066ff, 0 0 10px #177eed, 0 0 98px #8cf5ff75;
+    text-shadow: 3px 2px #b700ff;
+    box-shadow:0 0 4px #9027f1, 0 0 15px #9027f1, 0 0 20px #9027f1, 0 0 40px #9027f1, 0 0 60px #0066ff, 0 0 10px #177eed, 0 0 98px #8cf5ff75;
 }
 
 .homeBtns{
     background-color: #ffdd00;
-    border-color: #6700ff;
-    color: #6700ff;
+    border-color: white;
+    color: #7e28ff;
     border-width: 2px;
     font-family: 'btnTextFont';
     font-size: 18px;
@@ -43,7 +43,7 @@
 }
 
 .homeBtns:hover {
-    background-color: #00dfff;
+    background-color: white;
     color: #9f04dc;
     font-size: 16px;
 }

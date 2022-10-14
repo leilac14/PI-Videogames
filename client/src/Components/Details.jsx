@@ -9,7 +9,7 @@ import './CSS Styling/Details.css'
 
 
 export default function Details() {
-    let [videogame, setVideogame] = useState(null) //xq es null?
+    let [videogame, setVideogame] = useState() 
     let {id} = useParams()
 
     useEffect(() => {
@@ -32,11 +32,13 @@ export default function Details() {
                         <h1 className="name"> {videogame.name} </h1>
                         <img className="img" src={videogame.background_image} alt="Image not Found" />
                             <div className="atributos">
-                        {videogame.description ? <h3 className="description"> Description: <br/> {videogame.description.replaceAll("<p>","").replaceAll("</p>","").replaceAll("<br />","").replaceAll("<br/>","").replaceAll("<strong>","").replaceAll("</strong>","").replaceAll("<ul>","").replaceAll("</ul>","").replaceAll("<li>","").replaceAll("</li>","").replaceAll("[object Object]","").replaceAll("<h3>", "").replaceAll("&#39;", "")} </h3> : null}
+                        {videogame.description ? <h3 className="description"> Description: <br/> {videogame.description.replaceAll("<p>","").replaceAll("</p>","").replaceAll("<br />","").replaceAll("<br/>","").replaceAll("<br>", "").replaceAll("<strong>","").replaceAll("</strong>","").replaceAll("<ul>","").replaceAll("</ul>","").replaceAll("<li>","").replaceAll("</li>","").replaceAll("[object Object]","").replaceAll("<h3>", "").replaceAll("&#39;", "")} </h3> : null}
                         <div>
+                            {videogame.genres.length === 0 ? 
+                            <h3 className="genre"> Genres: Family</h3> :
                             <h3 className="genre"> Genres: {videogame.genres[0].name ? videogame.genres?.map(v => {
                                 return <h3>{v.name}</h3>
-                            }) : videogame.genres.join(", ")} </h3>
+                            }) : videogame.genres.join(", ")} </h3>}
                             <h3 className="platform"> Platforms: {videogame.platforms[0].name ? videogame.platforms?.map(v => {
                                 return <h3>{v.name}</h3>
                             }) : videogame.platforms.join(", ")} </h3>

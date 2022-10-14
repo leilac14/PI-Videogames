@@ -35,7 +35,6 @@ function rootReducer (state = initialState, action) {
             }else{
                 filteredGenre = allVideogames
             }
-            
             return {
                 ...state,
                 videogames: filteredGenre
@@ -79,8 +78,11 @@ function rootReducer (state = initialState, action) {
 
         case 'FILTER_CREATED':
             const allVideogames2 = state.allVideogames;
-            const filteredCreation = action.payload === 'Created' ? allVideogames2.filter(el => el.id.length === 36) : allVideogames2.filter(el => el.id.length !== 36);
-    
+            let filteredCreation = action.payload === 'Created' ? allVideogames2.filter(el => el.id.length === 36) : allVideogames2.filter(el => el.id.length !== 36);
+            if(filteredCreation.length === 0){
+                filteredCreation = "not found"
+            }
+            
             return {
                 ...state,
                 videogames: action.payload === 'All' ? allVideogames2 : filteredCreation
@@ -97,7 +99,12 @@ function rootReducer (state = initialState, action) {
                 ...state,
                 detail: action.payload
             }
-
+        
+        case 'CLEAN_HOME':
+            return {
+                ...state,
+                videogames: []
+            }
 
         default:
             return state;

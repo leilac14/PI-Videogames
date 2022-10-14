@@ -22,7 +22,8 @@ export default function Filters({handlerGenres, handlerCreated, source, genrecha
                     {
                         genres && genres.map(g => (
                             <option value={g.name} key={g.id}>{g.name}</option>
-                        ))
+                        )) //js resuelve lo ultimo.
+                        
                     }
                 </select>
 

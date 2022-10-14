@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getVideogamesByName } from '../Redux/Actions/index';
+import { getVideogamesByName, cleanHome } from '../Redux/Actions/index';
 
-export default function SearchBar () {
+export default function SearchBar ({setCurrentPage}) {
     const dispatch = useDispatch();
     const [name, setName] = useState("");
 
@@ -12,10 +12,12 @@ export default function SearchBar () {
         setName(e.target.value);
         console.log(name);
     }
-
+    
     function handlerSubmit(e) {
         e.preventDefault();
+        dispatch(cleanHome());
         dispatch(getVideogamesByName(name));
+        setCurrentPage(1);
         setName("");
     }
 
